@@ -16,6 +16,7 @@ public class UserService {
 		lst.add(ashwin);
 		lst.add(bharadwaj);
 		lst.add(vishal);
+		System.out.print("\nRecord added..");
 	}
 
 
@@ -48,14 +49,42 @@ public void searchEmployee(){
 	lst.indexOf(obj);
 	System.out.println("employee in the index of :"+lst.indexOf(obj));
 }
-		public static void main(String[] args) {
+	public static void main(String[] args) {
 		UserService obj1=new UserService();
+		int choice;
+		Scanner sc=new Scanner(System.in);
+		do{
+			System.out.print("\n============operations=============\n");
+			System.out.print("\n1. add");
+			System.out.print("\n2. show");
+			System.out.print("\n3. delete");
+			System.out.print("\n4. search");
+			System.out.print("\n0. exit\n");
+			System.out.print("\nEnter your choice (0-4)");
+			choice=sc.nextInt();
+			switch(choice){
+			case 1:
 		obj1.add();
+		break;
+			case 2:
 		obj1.displayAllEmployees();
+		break;
+			case 3:
 		obj1.delete();
+		break;
+			case 4:
 		obj1.searchEmployee();
+		break;
+			case 0:
+				System.out.print("\nTerminated");
+			default:
+				System.out.print("\ninvalid option");
+		}
+		
+	}while(choice!=0);
+}
 
-	}
+	
 }	
 	
 
