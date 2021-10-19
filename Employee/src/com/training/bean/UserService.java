@@ -41,13 +41,12 @@ public void displayAllEmployees(){
 	}	
   }
 public void searchEmployee(){
-	String ob;
+	int obj;
 	System.out.println("enter employee object to search: ");
-	ob=sc.next();
-	User object = null;
-	object.setUserName(ob);
-	lst.indexOf(object);
-	System.out.println("employee in the index of :"+lst.indexOf(object));
+	
+	obj=sc.nextInt();
+	lst.indexOf(obj);
+	System.out.println("employee in the index of :"+lst.indexOf(obj));
 }
 		public static void main(String[] args) {
 		UserService obj1=new UserService();
