@@ -20,20 +20,19 @@ public class UserService {
 
 
 	public void delete() {
-		String choice="Y",obj;
+			String choice="Y";
+		int obj;
 		while(choice.equalsIgnoreCase("y")){
 		System.out.println("enter employee object to delete: ");
-		obj=sc.next();
-		User object1 = null;
-		object1.setUserName(obj);
-		lst.remove(object1);
+		obj=sc.nextInt();
+		
+		lst.remove(obj);
 		
 		System.out.println("you want to continue :y or no :n");
 		choice=sc.next();
 		}
 		System.out.println("employee is removed :");
 	}	
-
 public void displayAllEmployees(){
 	ListIterator li=lst.listIterator();
 	System.out.println("employee in details");
