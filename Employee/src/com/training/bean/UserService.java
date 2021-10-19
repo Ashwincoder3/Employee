@@ -10,13 +10,18 @@ public class UserService {
 	static Scanner sc=new Scanner(System.in);
 	List<User> lst=new ArrayList<User>();
 	public  void add() {
-		User ashwin = new User(111,"ashwin","ashwin@gmail.com");
-		User bharadwaj=new User(222,"bharadwaj","bharadwaj@gmail.com");
-		User vishal=new User(333,"vishal","vishal@gmail.com");
-		lst.add(ashwin);
-		lst.add(bharadwaj);
-		lst.add(vishal);
-		System.out.print("\nRecord added..");
+        int id;
+        String name;
+        String email;
+        System.out.println("Enter id:");
+        id=sc.nextInt();
+        System.out.println("Enter Name:");
+        name=sc.next();
+        System.out.println("Enter email:");
+        email=sc.next();
+        User user= new User(id, name, email);
+        lst.add(user);
+        System.out.print("\nRecord added..");
 	}
 
 
@@ -41,16 +46,20 @@ public void displayAllEmployees(){
 		System.out.printf("\n"+li.next());
 	}	
   }
-public void searchEmployee(){
-	System.out.println("enter employee object to search: ");
-	
+public void searchUser(){
+	boolean found=false;
+	System.out.print("\nenter employee id to search: ");
 	int id=sc.nextInt();
-	int ob=lst.indexOf(id);
-	System.out.println(ob);
-	if(lst.equals(ob)) {
-	System.out.println("employee is not present");
-	}else {
-		System.out.println("employee is present");
+	Iterator it=lst.iterator();
+	while(it.hasNext()) {
+		User use=(User)it.next();
+		if(use.getUserUd()== id) {
+			System.out.print("\n"+use+"\nemployee is present");
+			found=true;
+		}
+	}if(!found) {
+		System.out.println("employee is not present in list");
+		
 	}
 }
 	public static void main(String[] args) {
@@ -77,10 +86,11 @@ public void searchEmployee(){
 		obj1.delete();
 		break;
 			case 4:
-		obj1.searchEmployee();
+		obj1.searchUser();
 		break;
 			case 0:
 				System.out.print("\nTerminated");
+					break;
 			default:
 				System.out.print("\ninvalid option");
 		}
