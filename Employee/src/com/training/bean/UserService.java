@@ -42,12 +42,16 @@ public void displayAllEmployees(){
 	}	
   }
 public void searchEmployee(){
-	int obj;
 	System.out.println("enter employee object to search: ");
 	
-	obj=sc.nextInt();
-	lst.indexOf(obj);
-	System.out.println("employee in the index of :"+lst.indexOf(obj));
+	int id=sc.nextInt();
+	int ob=lst.indexOf(id);
+	System.out.println(ob);
+	if(lst.equals(ob)) {
+	System.out.println("employee is not present");
+	}else {
+		System.out.println("employee is present");
+	}
 }
 	public static void main(String[] args) {
 		UserService obj1=new UserService();
