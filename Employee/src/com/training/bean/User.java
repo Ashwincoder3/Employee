@@ -24,7 +24,7 @@ public class User {
 	}
 	@Override
 	public String toString() {
-		return "User [userUd=" + userUd + ", userName=" + userName + ", userEmail=" + userEmail + "]";
+		return "\nUser [userUd=" + userUd + ", userName=" + userName + ", userEmail=" + userEmail + "]";
 	}
 	public User(int userUd, String userName, String userEmail) {
 		super();
@@ -36,6 +36,7 @@ public class User {
 		//default constructor
 		// TODO Auto-generated constructor stub
 	}
+	
 	
 
 }
