@@ -49,6 +49,14 @@ public void searchEmployee(){
 	lst.indexOf(object);
 	System.out.println("employee in the index of :"+lst.indexOf(object));
 }
+		public static void main(String[] args) {
+		UserService obj1=new UserService();
+		obj1.add();
+		obj1.displayAllEmployees();
+		obj1.delete();
+		obj1.searchEmployee();
+
+	}
 }	
 	
 
